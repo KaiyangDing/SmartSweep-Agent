@@ -1,0 +1,208 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1900 1140">
+<style>
+text{font-family:'Helvetica Neue',Arial,'PingFang SC','Microsoft YaHei','Noto Sans CJK SC',sans-serif}
+.title{font-size:28px;font-weight:700;fill:#26215C}
+.subtitle{font-size:15px;fill:#5F5E5A}
+.panel{fill:#F7F7F4;stroke:#D3D1C7;stroke-width:1}
+.panelLabel{font-size:18px;font-weight:700;fill:#2C2C2A}
+.tree{font-family:'SF Mono',Consolas,Menlo,monospace;font-size:16px;fill:#2C2C2A}
+.treeFolder{font-family:'SF Mono',Consolas,Menlo,monospace;font-size:16px;font-weight:700;fill:#3C3489}
+.outer{fill:#FFFFFF;stroke-width:1.6}
+.cTeal{stroke:#1D9E75}
+.cPurple{stroke:#534AB7}
+.cBlue{stroke:#185FA5}
+.cGreen{stroke:#639922}
+.cGray{stroke:#888780}
+.codebox{fill:#FFFFFF;stroke:#E2E0D9;stroke-width:1}
+.row{font-family:'SF Mono',Consolas,Menlo,monospace;font-size:15px}
+.kw{fill:#7F77DD}
+.fn{fill:#A32D2D;font-weight:600}
+.attr{fill:#185FA5}
+.plain{fill:#2C2C2A;font-weight:600}
+.compTitle{font-size:18px;font-weight:700;fill:#2C2C2A}
+.compSub{font-size:15px;fill:#5F5E5A;font-family:'SF Mono',Consolas,Menlo,monospace}
+.utilName{font-family:'SF Mono',Consolas,Menlo,monospace;font-size:15px;fill:#2C2C2A;font-weight:600}
+.utilDesc{font-size:14px;fill:#5F5E5A}
+.arr{fill:none;stroke:#73726C;stroke-width:1.6}
+.arrlbl{font-size:14px;fill:#5F5E5A}
+.legendLabel{font-size:15px;fill:#2C2C2A}
+.entry{fill:#FAEEDA;stroke:#BA7517;stroke-width:1.6}
+</style>
+<defs>
+<marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9" fill="none" stroke="#73726C" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+
+<rect x="0" y="0" width="1900" height="1140" fill="#FFFFFF"/>
+<text class="title" x="40" y="52">智能体项目 · 代码架构图</text>
+<text class="subtitle" x="40" y="76">基于 RAG 的 ReAct Agent —— 目录结构与模块调用关系</text>
+<line x1="40" y1="84" x2="1860" y2="84" stroke="#D3D1C7" stroke-width="1"/>
+
+<!-- FILE TREE -->
+<rect class="panel" x="40" y="98" width="300" height="1002" rx="10"/>
+<text class="panelLabel" x="62" y="132">代码：</text>
+<text class="treeFolder" x="70"  y="170">agent/</text>
+<text class="treeFolder" x="95"  y="203">tools/</text>
+<text class="tree"       x="120" y="236">agent_tools.py</text>
+<text class="tree"       x="120" y="269">middleware.py</text>
+<text class="tree"       x="95"  y="302">react_agent.py</text>
+<text class="treeFolder" x="70"  y="335">config/</text>
+<text class="treeFolder" x="70"  y="368">data/</text>
+<text class="treeFolder" x="70"  y="401">model/</text>
+<text class="tree"       x="95"  y="434">factory.py</text>
+<text class="treeFolder" x="70"  y="467">prompts/</text>
+<text class="treeFolder" x="70"  y="500">rag/</text>
+<text class="tree"       x="95"  y="533">rag_service.py</text>
+<text class="tree"       x="95"  y="566">vector_store.py</text>
+<text class="treeFolder" x="70"  y="599">utils/</text>
+<text class="tree"       x="95"  y="632">chain_debug.py</text>
+<text class="tree"       x="95"  y="665">config_handler.py</text>
+<text class="tree"       x="95"  y="698">file_handler.py</text>
+<text class="tree"       x="95"  y="731">logger_handler.py</text>
+<text class="tree"       x="95"  y="764">path_tools.py</text>
+<text class="tree"       x="95"  y="797">prompt_loader.py</text>
+<text class="tree"       x="70"  y="830">.gitignore</text>
+<text class="tree"       x="70"  y="863">README.md</text>
+<text class="tree"       x="70"  y="896">app.py</text>
+
+<!-- agent_tools.py -->
+<rect class="outer cTeal" x="400" y="190" width="300" height="370" rx="10"/>
+<rect class="codebox" x="420" y="218" width="260" height="44" rx="6"/>
+<text class="row" x="434" y="240" dominant-baseline="central"><tspan class="kw">def </tspan><tspan class="fn">rag_summarize</tspan></text>
+<rect class="codebox" x="420" y="274" width="260" height="44" rx="6"/>
+<text class="row" x="434" y="296" dominant-baseline="central"><tspan class="kw">def </tspan><tspan class="fn">get_weather</tspan></text>
+<rect class="codebox" x="420" y="330" width="260" height="44" rx="6"/>
+<text class="row" x="434" y="352" dominant-baseline="central"><tspan class="kw">def </tspan><tspan class="fn">get_user_location</tspan></text>
+<rect class="codebox" x="420" y="386" width="260" height="44" rx="6"/>
+<text class="row" x="434" y="408" dominant-baseline="central"><tspan class="kw">def </tspan><tspan class="fn">get_user_id</tspan></text>
+<rect class="codebox" x="420" y="442" width="260" height="44" rx="6"/>
+<text class="row" x="434" y="464" dominant-baseline="central"><tspan class="kw">def </tspan><tspan class="fn">get_current_month</tspan></text>
+<rect class="codebox" x="420" y="498" width="260" height="44" rx="6"/>
+<text class="row" x="434" y="520" dominant-baseline="central"><tspan class="kw">def </tspan><tspan class="fn">generate_external_data</tspan></text>
+<text class="compTitle" x="550" y="590" text-anchor="middle">agent_tools.py</text>
+
+<!-- class RagSummarizeService -->
+<rect class="outer cPurple" x="760" y="150" width="440" height="420" rx="10"/>
+<rect class="codebox" x="780" y="178" width="200" height="44" rx="6"/>
+<text class="row attr" x="794" y="200" dominant-baseline="central">self.vector_store</text>
+<rect class="codebox" x="990" y="178" width="200" height="44" rx="6"/>
+<text class="row attr" x="1004" y="200" dominant-baseline="central">self.prompt_template</text>
+<rect class="codebox" x="780" y="238" width="200" height="44" rx="6"/>
+<text class="row attr" x="794" y="260" dominant-baseline="central">self.retriever</text>
+<rect class="codebox" x="990" y="238" width="200" height="44" rx="6"/>
+<text class="row attr" x="1004" y="260" dominant-baseline="central">self.prompt_text</text>
+<rect class="codebox" x="780" y="312" width="200" height="44" rx="6"/>
+<text class="row" x="794" y="334" dominant-baseline="central"><tspan class="kw">def </tspan><tspan class="fn">rag_summarize</tspan></text>
+<rect class="codebox" x="990" y="312" width="200" height="44" rx="6"/>
+<text class="row attr" x="1004" y="334" dominant-baseline="central">self.model</text>
+<rect class="codebox" x="780" y="372" width="200" height="44" rx="6"/>
+<text class="row" x="794" y="394" dominant-baseline="central"><tspan class="kw">def </tspan><tspan class="fn">_init_chain</tspan></text>
+<rect class="codebox" x="990" y="372" width="200" height="44" rx="6"/>
+<text class="row attr" x="1004" y="394" dominant-baseline="central">self.chain</text>
+<rect class="codebox" x="780" y="432" width="200" height="44" rx="6"/>
+<text class="row" x="794" y="454" dominant-baseline="central"><tspan class="kw">def </tspan><tspan class="fn">retrieve_docs</tspan></text>
+<rect class="codebox" x="780" y="492" width="240" height="44" rx="6"/>
+<text class="row" x="794" y="514" dominant-baseline="central"><tspan class="kw">def </tspan><tspan class="fn">_load_prompt_text</tspan></text>
+<text class="compTitle" x="980" y="596" text-anchor="middle">class RagSummarizeService</text>
+<text class="compSub" x="980" y="620" text-anchor="middle">rag_service.py</text>
+
+<!-- class VectorStoreService -->
+<rect class="outer cPurple" x="1280" y="150" width="340" height="300" rx="10"/>
+<rect class="codebox" x="1310" y="185" width="280" height="44" rx="6"/>
+<text class="row attr" x="1324" y="207" dominant-baseline="central">self.vector_store</text>
+<rect class="codebox" x="1310" y="245" width="280" height="44" rx="6"/>
+<text class="row attr" x="1324" y="267" dominant-baseline="central">self.spliter</text>
+<rect class="codebox" x="1310" y="320" width="280" height="44" rx="6"/>
+<text class="row" x="1324" y="342" dominant-baseline="central"><tspan class="kw">def </tspan><tspan class="fn">load_document</tspan></text>
+<rect class="codebox" x="1310" y="380" width="280" height="44" rx="6"/>
+<text class="row" x="1324" y="402" dominant-baseline="central"><tspan class="kw">def </tspan><tspan class="fn">get_retriever</tspan></text>
+<text class="compTitle" x="1450" y="478" text-anchor="middle">class VectorStoreService</text>
+<text class="compSub" x="1450" y="502" text-anchor="middle">vector_store.py</text>
+
+<!-- middleware.py -->
+<rect class="outer cTeal" x="400" y="680" width="300" height="230" rx="10"/>
+<rect class="codebox" x="420" y="712" width="260" height="44" rx="6"/>
+<text class="row" x="434" y="734" dominant-baseline="central"><tspan class="kw">def </tspan><tspan class="fn">monitor_tool</tspan></text>
+<rect class="codebox" x="420" y="772" width="260" height="44" rx="6"/>
+<text class="row" x="434" y="794" dominant-baseline="central"><tspan class="kw">def </tspan><tspan class="fn">log_before_model</tspan></text>
+<rect class="codebox" x="420" y="832" width="260" height="44" rx="6"/>
+<text class="row" x="434" y="854" dominant-baseline="central"><tspan class="kw">def </tspan><tspan class="fn">report_prompt_switch</tspan></text>
+<text class="compTitle" x="550" y="940" text-anchor="middle">middleware.py</text>
+
+<!-- class ReactAgent -->
+<rect class="outer cBlue" x="780" y="700" width="360" height="200" rx="10"/>
+<rect class="entry" x="800" y="735" width="320" height="52" rx="6"/>
+<text class="row plain" x="960" y="761" text-anchor="middle" dominant-baseline="central">self.agent = create_agent(...)</text>
+<rect class="codebox" x="800" y="807" width="320" height="52" rx="6"/>
+<text class="row" x="814" y="833" dominant-baseline="central"><tspan class="kw">def </tspan><tspan class="fn">execute_stream</tspan></text>
+<text class="compTitle" x="960" y="932" text-anchor="middle">class ReactAgent</text>
+<text class="compSub" x="960" y="956" text-anchor="middle">react_agent.py</text>
+
+<!-- factory.py -->
+<rect class="outer cGreen" x="1180" y="610" width="240" height="180" rx="10"/>
+<rect class="codebox" x="1200" y="645" width="200" height="50" rx="6"/>
+<text class="row plain" x="1300" y="670" text-anchor="middle" dominant-baseline="central">chat_model</text>
+<rect class="codebox" x="1200" y="715" width="200" height="50" rx="6"/>
+<text class="row plain" x="1300" y="740" text-anchor="middle" dominant-baseline="central">embed_model</text>
+<text class="compTitle" x="1300" y="816" text-anchor="middle">factory.py</text>
+
+<!-- utils -->
+<rect x="1460" y="560" width="400" height="420" rx="14" fill="#FAFAF8" stroke="#888780" stroke-width="1.6" stroke-dasharray="6 6"/>
+<rect class="codebox" x="1480" y="590" width="180" height="88" rx="8"/>
+<text class="utilName" x="1494" y="620">config_handler.py</text>
+<text class="utilDesc" x="1494" y="648">配置文件处理</text>
+<rect class="codebox" x="1480" y="698" width="180" height="88" rx="8"/>
+<text class="utilName" x="1494" y="728">file_handler.py</text>
+<text class="utilDesc" x="1494" y="756">文件处理工具</text>
+<rect class="codebox" x="1480" y="806" width="180" height="88" rx="8"/>
+<text class="utilName" x="1494" y="836">logger_handler.py</text>
+<text class="utilDesc" x="1494" y="864">日志工具</text>
+<rect class="codebox" x="1680" y="590" width="160" height="88" rx="8"/>
+<text class="utilName" x="1694" y="620">path_tool.py</text>
+<text class="utilDesc" x="1694" y="648">路径工具</text>
+<rect class="codebox" x="1680" y="698" width="160" height="88" rx="8"/>
+<text class="utilName" x="1694" y="728">prompt_loader.py</text>
+<text class="utilDesc" x="1694" y="756">提示词加载工具</text>
+<text class="compTitle" x="1660" y="1014" text-anchor="middle">utils</text>
+
+<!-- app.py -->
+<rect class="entry" x="900" y="1010" width="240" height="70" rx="10"/>
+<text class="plain" x="1020" y="1045" text-anchor="middle" font-size="20" dominant-baseline="central">app.py</text>
+
+<!-- ARROWS -->
+<path class="arr" d="M700,240 H720 V334 H758" marker-end="url(#arrow)"/>
+<text class="arrlbl" x="727" y="302">调用</text>
+
+<path class="arr" d="M1450,150 V110 H1080 V150" marker-end="url(#arrow)"/>
+<text class="arrlbl" x="1265" y="100" text-anchor="middle">retriever · 向量检索</text>
+
+<path class="arr" d="M1240,645 V334 H1202" marker-end="url(#arrow)"/>
+<text class="arrlbl" x="1252" y="470">chat_model</text>
+
+<path class="arr" d="M1400,740 H1432 V452" marker-end="url(#arrow)"/>
+<text class="arrlbl" x="1445" y="600">embed_model</text>
+
+<path class="arr" d="M650,560 V580 H920 V733" marker-end="url(#arrow)"/>
+<text class="arrlbl" x="772" y="573">注册工具</text>
+
+<path class="arr" d="M700,795 H740 V761 H798" marker-end="url(#arrow)"/>
+<text class="arrlbl" x="745" y="822">注册中间件</text>
+
+<path class="arr" d="M1200,670 H1160 V761 H1142" marker-end="url(#arrow)"/>
+
+<path class="arr" d="M960,859 V950 H1020 V1008" marker-end="url(#arrow)"/>
+<text class="arrlbl" x="1095" y="945">Streamlit 网页</text>
+
+<!-- LEGEND -->
+<rect x="400" y="987" width="16" height="16" rx="3" fill="#9FE1CB" stroke="#1D9E75" stroke-width="1"/>
+<text class="legendLabel" x="426" y="1000" dominant-baseline="central">工具 / 中间件</text>
+<rect x="640" y="987" width="16" height="16" rx="3" fill="#CECBF6" stroke="#534AB7" stroke-width="1"/>
+<text class="legendLabel" x="666" y="1000" dominant-baseline="central">服务类（RAG / 向量库）</text>
+<rect x="400" y="1021" width="16" height="16" rx="3" fill="#B5D4F4" stroke="#185FA5" stroke-width="1"/>
+<text class="legendLabel" x="426" y="1034" dominant-baseline="central">智能体 ReactAgent</text>
+<rect x="640" y="1021" width="16" height="16" rx="3" fill="#C0DD97" stroke="#639922" stroke-width="1"/>
+<text class="legendLabel" x="666" y="1034" dominant-baseline="central">模型工厂 factory</text>
+<rect x="400" y="1055" width="16" height="16" rx="3" fill="#FAEEDA" stroke="#BA7517" stroke-width="1"/>
+<text class="legendLabel" x="426" y="1068" dominant-baseline="central">入口 / create_agent</text>
+<rect x="640" y="1055" width="16" height="16" rx="3" fill="#D3D1C7" stroke="#888780" stroke-width="1"/>
+<text class="legendLabel" x="666" y="1068" dominant-baseline="central">基础工具库 utils</text>
+</svg>
